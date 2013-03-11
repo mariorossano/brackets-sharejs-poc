@@ -1,0 +1,23 @@
+{
+  "name": "brackets-sharejs-poc",
+  "version": "0.1.0",
+  "description": "Brackets + ShareJS PoC",
+  "keywords": ["operational transformation", "concurrent", "collaborative", "server", "brackets"],
+  "homepage": "",
+  "author": "Mario Rossano <avezone@gmail.com>",
+  "main": "app.js",
+  "dependencies": {
+    "connect": ">= 1.1.1 < 2.0.0",
+    "browserchannel": "*",
+    "share" : "0.5.0"
+  },
+  "engine": "node >= 0.4.4",
+  "licenses": [{
+    "type": "BSD",
+    "url": "http://www.freebsd.org/copyright/freebsd-license.html"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mariorossano/brackets-sharejs-poc.git"
+  }
+}

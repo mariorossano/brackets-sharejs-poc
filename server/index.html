@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<link href="/style.css" rel="stylesheet" type="text/css">
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+	<script src="https://raw.github.com/ajaxorg/ace-builds/master/src-min/ace.js"></script>
+	<script src="https://raw.github.com/ajaxorg/ace-builds/master/src-min/theme-chrome.js" ></script>
+	<script src="https://raw.github.com/ajaxorg/ace-builds/master/src-min/mode-html.js"></script>
+	<script src="https://raw.github.com/ajaxorg/ace-builds/master/src-min/mode-css.js"></script>
+	<script src="https://raw.github.com/ajaxorg/ace-builds/master/src-min/mode-javascript.js"></script>
+	
+	<script src="/bcsocket.js"></script>
+	<script src="/share.js"></script>
+	<script src="/ace.js"></script>
+</head>
+
+<body>
+
+<div id="editor"></div>
+	
+	<select id="select-mode">
+	  <option value="javascript">javascript</option>
+	  <option value="html">html</option>
+	  <option value="css">css</option>
+	</select>
+
+<script>
+    
+    var editor = ace.edit("editor");
+    
+    editor.setTheme("ace/theme/chrome");
+    editor.getSession().setMode("ace/mode/javascript");
+
+    $('#select-mode').change(function(){	
+		editor.getSession().setMode("ace/mode/"+ $(this).val());			
+	});
+
+    sharejs.open("blag", 'text', function(error, doc) {
+        doc.attach_ace(editor);
+    });
+
+</script>
+
+</body>
+</html>
